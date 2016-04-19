@@ -6,10 +6,6 @@ public class Direction {
         this.direction = direction;
     }
 
-    public String getDirection() {
-        return direction;
-    }
-
     public boolean isPointingTo(String direction) {
         return this.direction.equals(direction);
     }
