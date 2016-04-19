@@ -15,7 +15,7 @@ public class Rover {
             String command = commandsSequence.substring(i, i + 1);
 
             if (command.equals("l")) {
-                rotateToLeft();
+                direction = direction.rotateToLeft();
             } else if (command.equals("r")) {
                 direction = direction.rotateToRight();
             } else {
@@ -39,10 +39,6 @@ public class Rover {
                 }
             }
         }
-    }
-
-    private void rotateToLeft() {
-        direction = direction.rotateToLeft();
     }
 
     @Override
