@@ -30,11 +30,11 @@ public class Rover {
                 if (direction.equals("N")) {
                     direction = "E";
                 } else if (direction.equals("S")) {
-                        direction = "W";
+                    direction = "W";
                 } else if (direction.equals("W")) {
-                        direction = "N";
+                    direction = "N";
                 } else {
-                        direction = "S";
+                    direction = "S";
                 }
             } else {
 
