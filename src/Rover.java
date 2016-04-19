@@ -30,11 +30,11 @@ public class Rover {
                 }
                 int displacement = displacement1;
 
-                if (direction.equals("N")) {
+                if (directionClass.isPointingTo("N")) {
                     y += displacement;
-                } else if (direction.equals("S")) {
+                } else if (directionClass.isPointingTo("S")) {
                     y -= displacement;
-                } else if (direction.equals("W")) {
+                } else if (directionClass.isPointingTo("W")) {
                     x -= displacement;
                 } else {
                     x += displacement;
@@ -62,13 +62,15 @@ public class Rover {
 
         if (y != rover.y) return false;
         if (x != rover.x) return false;
-        return direction != null ? direction.equals(rover.direction) : rover.direction == null;
+        if (direction != null ? !direction.equals(rover.direction) : rover.direction != null) return false;
+        return directionClass != null ? directionClass.equals(rover.directionClass) : rover.directionClass == null;
 
     }
 
     @Override
     public int hashCode() {
         int result = direction != null ? direction.hashCode() : 0;
+        result = 31 * result + (directionClass != null ? directionClass.hashCode() : 0);
         result = 31 * result + y;
         result = 31 * result + x;
         return result;

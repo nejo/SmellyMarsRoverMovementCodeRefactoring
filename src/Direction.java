@@ -10,6 +10,10 @@ public class Direction {
         return direction;
     }
 
+    public boolean isPointingTo(String direction) {
+        return this.direction.equals(direction);
+    }
+
     public Direction rotateToRight() {
         if (direction.equals("N")) {
             return new Direction("E");
