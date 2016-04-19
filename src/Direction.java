@@ -12,7 +12,7 @@ public class Direction {
         } else if (isSouth()) {
             return new West();
         } else if (isWest()) {
-            return new Direction("N");
+            return new North();
         } else {
             return new South();
         }
@@ -38,7 +38,7 @@ public class Direction {
         } else if (isWest()) {
             return new South();
         } else {
-            return new Direction("N");
+            return new North();
         }
     }
 
