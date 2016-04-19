@@ -57,4 +57,18 @@ public class Direction {
     public int hashCode() {
         return direction != null ? direction.hashCode() : 0;
     }
+
+    public static Direction factory(String direction) {
+        switch (direction) {
+            case "E":
+                return new East();
+            case "W":
+                return new West();
+            case "S":
+                return new South();
+            case "N":
+                return new North();
+        }
+        return null;
+    }
 }
