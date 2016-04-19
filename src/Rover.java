@@ -17,16 +17,7 @@ public class Rover {
             if (command.equals("l")) {
                 rotateToLeft();
             } else if (command.equals("r")) {
-                // Rotate Rover to the right
-                if (direction.equals("N")) {
-                    direction = "E";
-                } else if (direction.equals("S")) {
-                    direction = "W";
-                } else if (direction.equals("W")) {
-                    direction = "N";
-                } else {
-                    direction = "S";
-                }
+                rotateToRight();
             } else {
 
                 // Displace Rover
@@ -47,6 +38,19 @@ public class Rover {
                     x += displacement;
                 }
             }
+        }
+    }
+
+    private void rotateToRight() {
+        // Rotate Rover to the right
+        if (direction.equals("N")) {
+            direction = "E";
+        } else if (direction.equals("S")) {
+            direction = "W";
+        } else if (direction.equals("W")) {
+            direction = "N";
+        } else {
+            direction = "S";
         }
     }
 
