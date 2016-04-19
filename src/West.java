@@ -10,6 +10,6 @@ public class West extends Direction {
 
     @Override
     public Direction rotateToRight() {
-        return new Direction("N");
+        return new North();
     }
 }

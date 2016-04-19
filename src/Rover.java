@@ -15,8 +15,8 @@ public class Rover {
             case "S":
                 this.direction = new South();
                 break;
-            default:
-                this.direction = new Direction(direction);
+            case "N":
+                this.direction = new North();
                 break;
         }
 
@@ -30,10 +30,10 @@ public class Rover {
 
             switch (command) {
                 case "l":
-                    direction = direction.rotateToLeft();
+                    direction = this.direction.rotateToLeft();
                     break;
                 case "r":
-                    direction = direction.rotateToRight();
+                    direction = this.direction.rotateToRight();
                     break;
                 default:
                     displace(command);

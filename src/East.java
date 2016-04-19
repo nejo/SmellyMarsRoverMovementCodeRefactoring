@@ -6,7 +6,7 @@ public class East extends Direction {
 
     @Override
     public Direction rotateToLeft() {
-        return new Direction("N");
+        return new North();
     }
 
     @Override

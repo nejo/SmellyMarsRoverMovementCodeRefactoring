@@ -8,7 +8,6 @@ public class North extends Direction {
         return new West();
     }
 
-    @Override
     public Direction rotateToRight() {
         return new East();
     }
