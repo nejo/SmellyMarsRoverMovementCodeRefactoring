@@ -22,6 +22,18 @@ public class Direction {
         }
     }
 
+    public Direction rotateToLeft() {
+        if (direction.equals("N")) {
+            return new Direction("W");
+        } else if (direction.equals("S")) {
+            return new Direction("E");
+        } else if (direction.equals("W")) {
+            return new Direction("S");
+        } else {
+            return new Direction("N");
+        }
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

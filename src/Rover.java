@@ -49,15 +49,8 @@ public class Rover {
     }
 
     private void rotateToLeft() {
-        if (direction.equals("N")) {
-            direction = "W";
-        } else if (direction.equals("S")) {
-            direction = "E";
-        } else if (direction.equals("W")) {
-            direction = "S";
-        } else {
-            direction = "N";
-        }
+        directionClass = directionClass.rotateToLeft();
+        direction = directionClass.getDirection();
     }
 
     @Override
