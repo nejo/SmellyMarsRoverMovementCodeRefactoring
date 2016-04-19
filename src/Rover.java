@@ -15,8 +15,7 @@ public class Rover {
             String command = commandsSequence.substring(i, i + 1);
 
             if (command.equals("l")) {
-
-                // Rotate Rover
+                // Rotate Rover to the left
                 if (direction.equals("N")) {
                     direction = "W";
                 } else if (direction.equals("S")) {
@@ -27,7 +26,7 @@ public class Rover {
                     direction = "N";
                 }
             } else if (command.equals("r")) {
-                // Rotate Rover
+                // Rotate Rover to the right
                 if (direction.equals("N")) {
                     if (command.equals("r")) {
                         direction = "E";
