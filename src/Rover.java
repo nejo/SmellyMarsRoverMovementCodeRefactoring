@@ -1,11 +1,13 @@
 public class Rover {
 
     private String direction;
+    private Direction directionClass;
     private int y;
     private int x;
 
     public Rover(int x, int y, String direction) {
         this.direction = direction;
+        this.directionClass = new Direction(direction);
         this.y = y;
         this.x = x;
     }
@@ -42,15 +44,8 @@ public class Rover {
     }
 
     private void rotateToRight() {
-        if (direction.equals("N")) {
-            direction = "E";
-        } else if (direction.equals("S")) {
-            direction = "W";
-        } else if (direction.equals("W")) {
-            direction = "N";
-        } else {
-            direction = "S";
-        }
+        directionClass = directionClass.rotateToRight();
+        direction = directionClass.getDirection();
     }
 
     private void rotateToLeft() {
@@ -66,30 +61,23 @@ public class Rover {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
-        if (obj == null)
-            return false;
+        Rover rover = (Rover) o;
 
-        if (getClass() != obj.getClass())
-            return false;
+        if (y != rover.y) return false;
+        if (x != rover.x) return false;
+        return direction != null ? direction.equals(rover.direction) : rover.direction == null;
 
-        Rover other = (Rover) obj;
+    }
 
-        if (direction == null) {
-            if (other.direction != null)
-                return false;
-        } else if (!direction.equals(other.direction))
-            return false;
-
-        if (x != other.x)
-            return false;
-
-        if (y != other.y)
-            return false;
-
-        return true;
+    @Override
+    public int hashCode() {
+        int result = direction != null ? direction.hashCode() : 0;
+        result = 31 * result + y;
+        result = 31 * result + x;
+        return result;
     }
 }
