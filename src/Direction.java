@@ -6,10 +6,6 @@ public class Direction {
         this.direction = direction;
     }
 
-    public boolean isPointingTo(String direction) {
-        return this.direction.equals(direction);
-    }
-
     public Direction rotateToRight() {
         if (isNorth()) {
             return new Direction("E");
@@ -22,15 +18,15 @@ public class Direction {
         }
     }
 
-    private boolean isWest() {
+    public boolean isWest() {
         return direction.equals("W");
     }
 
-    private boolean isNorth() {
+    public boolean isNorth() {
         return direction.equals("N");
     }
 
-    private boolean isSouth() {
+    public boolean isSouth() {
         return direction.equals("S");
     }
 
