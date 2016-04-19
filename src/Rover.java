@@ -12,6 +12,9 @@ public class Rover {
             case "W":
                 this.direction = new West();
                 break;
+            case "S":
+                this.direction = new South();
+                break;
             default:
                 this.direction = new Direction(direction);
                 break;

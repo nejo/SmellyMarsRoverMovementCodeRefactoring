@@ -11,6 +11,6 @@ public class East extends Direction {
 
     @Override
     public Direction rotateToRight() {
-        return new Direction("S");
+        return new South();
     }
 }

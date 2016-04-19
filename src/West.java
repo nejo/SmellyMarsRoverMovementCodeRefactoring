@@ -5,7 +5,7 @@ public class West extends Direction {
 
     @Override
     public Direction rotateToLeft() {
-        return new Direction("S");
+        return new South();
     }
 
     @Override
