@@ -11,23 +11,35 @@ public class Direction {
     }
 
     public Direction rotateToRight() {
-        if (direction.equals("N")) {
+        if (isNorth()) {
             return new Direction("E");
-        } else if (direction.equals("S")) {
+        } else if (isSouth()) {
             return new Direction("W");
-        } else if (direction.equals("W")) {
+        } else if (isWest()) {
             return new Direction("N");
         } else {
             return new Direction("S");
         }
     }
 
+    private boolean isWest() {
+        return direction.equals("W");
+    }
+
+    private boolean isNorth() {
+        return direction.equals("N");
+    }
+
+    private boolean isSouth() {
+        return direction.equals("S");
+    }
+
     public Direction rotateToLeft() {
-        if (direction.equals("N")) {
+        if (isNorth()) {
             return new Direction("W");
-        } else if (direction.equals("S")) {
+        } else if (isSouth()) {
             return new Direction("E");
-        } else if (direction.equals("W")) {
+        } else if (isWest()) {
             return new Direction("S");
         } else {
             return new Direction("N");
