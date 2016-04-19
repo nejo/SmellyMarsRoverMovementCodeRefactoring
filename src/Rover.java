@@ -17,7 +17,7 @@ public class Rover {
             if (command.equals("l")) {
                 rotateToLeft();
             } else if (command.equals("r")) {
-                rotateToRight();
+                direction = direction.rotateToRight();
             } else {
 
                 // Displace Rover
@@ -39,10 +39,6 @@ public class Rover {
                 }
             }
         }
-    }
-
-    private void rotateToRight() {
-        direction = direction.rotateToRight();
     }
 
     private void rotateToLeft() {
