@@ -10,7 +10,7 @@ public class Direction {
         if (isNorth()) {
             return new East();
         } else if (isSouth()) {
-            return new Direction("W");
+            return new West();
         } else if (isWest()) {
             return new Direction("N");
         } else {
@@ -32,7 +32,7 @@ public class Direction {
 
     public Direction rotateToLeft() {
         if (isNorth()) {
-            return new Direction("W");
+            return new West();
         } else if (isSouth()) {
             return new East();
         } else if (isWest()) {
