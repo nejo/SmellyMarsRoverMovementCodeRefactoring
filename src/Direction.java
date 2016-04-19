@@ -1,6 +1,6 @@
 public class Direction {
 
-    private String direction;
+    protected String direction;
 
     public Direction(String direction) {
         this.direction = direction;
@@ -8,7 +8,7 @@ public class Direction {
 
     public Direction rotateToRight() {
         if (isNorth()) {
-            return new Direction("E");
+            return new East();
         } else if (isSouth()) {
             return new Direction("W");
         } else if (isWest()) {
@@ -34,7 +34,7 @@ public class Direction {
         if (isNorth()) {
             return new Direction("W");
         } else if (isSouth()) {
-            return new Direction("E");
+            return new East();
         } else if (isWest()) {
             return new Direction("S");
         } else {

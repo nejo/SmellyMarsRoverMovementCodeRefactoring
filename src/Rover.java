@@ -5,7 +5,15 @@ public class Rover {
     private int x;
 
     public Rover(int x, int y, String direction) {
-        this.direction = new Direction(direction);
+        switch (direction) {
+            case "E":
+                this.direction = new East();
+                break;
+            default:
+                this.direction = new Direction(direction);
+                break;
+        }
+
         this.y = y;
         this.x = x;
     }
