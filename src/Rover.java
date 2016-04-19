@@ -25,7 +25,6 @@ public class Rover {
     }
 
     private void displace(String command) {
-        // Displace Rover
         int displacement1 = -1;
 
         if (command.equals("f")) {
