@@ -1,11 +1,11 @@
 public class Rover {
 
-    private Direction directionClass;
+    private Direction direction;
     private int y;
     private int x;
 
     public Rover(int x, int y, String direction) {
-        this.directionClass = new Direction(direction);
+        this.direction = new Direction(direction);
         this.y = y;
         this.x = x;
     }
@@ -28,11 +28,11 @@ public class Rover {
                 }
                 int displacement = displacement1;
 
-                if (directionClass.isPointingTo("N")) {
+                if (direction.isPointingTo("N")) {
                     y += displacement;
-                } else if (directionClass.isPointingTo("S")) {
+                } else if (direction.isPointingTo("S")) {
                     y -= displacement;
-                } else if (directionClass.isPointingTo("W")) {
+                } else if (direction.isPointingTo("W")) {
                     x -= displacement;
                 } else {
                     x += displacement;
@@ -42,11 +42,11 @@ public class Rover {
     }
 
     private void rotateToRight() {
-        directionClass = directionClass.rotateToRight();
+        direction = direction.rotateToRight();
     }
 
     private void rotateToLeft() {
-        directionClass = directionClass.rotateToLeft();
+        direction = direction.rotateToLeft();
     }
 
     @Override
@@ -58,13 +58,13 @@ public class Rover {
 
         if (y != rover.y) return false;
         if (x != rover.x) return false;
-        return directionClass != null ? directionClass.equals(rover.directionClass) : rover.directionClass == null;
+        return direction != null ? direction.equals(rover.direction) : rover.direction == null;
 
     }
 
     @Override
     public int hashCode() {
-        int result = directionClass != null ? directionClass.hashCode() : 0;
+        int result = direction != null ? direction.hashCode() : 0;
         result = 31 * result + y;
         result = 31 * result + x;
         return result;
